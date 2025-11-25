@@ -1,0 +1,2 @@
+1. Don;t use recursion inplace of simple for loop due to various kind of overhead like stack calling are slower than loop jumps, etc.
+

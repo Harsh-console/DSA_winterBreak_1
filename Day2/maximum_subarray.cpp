@@ -4,11 +4,12 @@ using namespace std;
 
 void find_maximum_crossing_subarray(int arr[], int low, int mid, int high, int ans[]){
     // ans[]={max_left, max_right, left_sum + right_sum}
+    /* warning : wrong code but i still don't know why?
     int left_sum = 0;
     for(int i = low; i <= mid; i++) left_sum += arr[i];
-    int max_left_sum = - INF;
-    int max_left = low;
-    for(int i = low; i < mid; i++) {
+    int max_left_sum = left_sum; // maximum sum we got
+    int max_left = low; // starting index for maximum sum we got
+    for(int i = low; i <= mid; i++) {
         left_sum -= arr[i];
         if(left_sum > max_left_sum){
             max_left_sum = left_sum;
@@ -16,8 +17,8 @@ void find_maximum_crossing_subarray(int arr[], int low, int mid, int high, int a
         }
     }
     int right_sum = 0;
-    for(int i = mid; i <= high; i++) right_sum += arr[i];
-    int max_right_sum = -INF;
+    for(int i = mid+1; i <= high; i++) right_sum += arr[i];
+    int max_right_sum = right_sum;
     int max_right = high;
     for(int i = high; i > mid; i--){
         right_sum -= arr[i];
@@ -28,6 +29,26 @@ void find_maximum_crossing_subarray(int arr[], int low, int mid, int high, int a
     }
     ans[0] = max_left; ans[1] = max_right; ans[2] = max_left_sum + max_right_sum;
     return;
+    */
+    int left_sum = 0;
+    int max_left_sum = -INF;
+    for(int i = mid; i >= low; i--){
+        left_sum += arr[i];
+        if(left_sum > max_left_sum){
+            max_left_sum = left_sum;
+            ans[0] = i;
+        }
+    }
+    int right_sum = 0;
+    int max_right_sum = -INF;
+    for(int i = mid+1; i <= high; i++){
+        right_sum += arr[i];
+        if(right_sum > max_right_sum){
+            max_right_sum = right_sum;
+            ans[1] = i;
+        }
+    }
+    ans[2] = max_left_sum + max_right_sum;
 }
 
 void find_maximum_subarray(int arr[], int low, int high, int ans[]){
@@ -63,18 +84,33 @@ void find_maximum_subarray(int arr[], int low, int high, int ans[]){
     return;
 }
 
+void find_maximum_subarray_bruteFore(int arr[], int n, int ans[]){
+    // int ans[] = {low, high, sum}
+    ans[0] = 0; ans[1] = 0; ans[2] = arr[0];
+    for(int low = 0; low < n - 1; low++){
+        for(int high = low; high < n; high++){
+            int sum = 0;
+            for(int i = low; i <= high; i++) sum += arr[i];
+            if(sum > ans[2]){
+                ans[0] = low; ans[1] = high; ans[2] = sum;
+            }
+        }
+    }
+}
+
 int main(){
+    ios::sync_with_stdio(NULL);
+    cin.tie(0);
     cout<<"Let's Go!"<<endl;
     //int arr[5] = {0, 1 ,-4, 3, -4};
     int ans[3] = {0};
-    int arr[] = {
-        -5, 2, 3, -2, 4, -1, 2, -3, 6, -5,
-         4, 3, -2, 1, -4, 6, 2, -1, 3, -2,
-         5, -3, 4, -1, 2, -4, 3, -2, 1, 4
-    };
-    int n = 30;
+    int arr[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+    int n = 8;
+    // Expected: low=2, high=6, sum=7  [4, -1, -2, 1, 5]
 
     find_maximum_subarray(arr, 0, n - 1, ans);
-    cout<<"Maximum subarray is :\nlow = "<<ans[0]<<"\nhigh = "<<ans[1]<<"\nsum = "<<ans[2]<<endl;
+    cout<<"Maximum subarray using Recursion is :\nlow = "<<ans[0]<<"\nhigh = "<<ans[1]<<"\nsum = "<<ans[2]<<endl;
+    find_maximum_subarray_bruteFore(arr, n, ans);
+    cout<<"Maximum Subarray using Brute Force is :\nlow = "<<ans[0]<<"\nhigh = "<<ans[1]<<"\nsum = "<<ans[2]<<endl;
     return 0;
 }

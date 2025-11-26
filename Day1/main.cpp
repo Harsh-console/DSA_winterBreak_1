@@ -88,7 +88,10 @@ void GeneralizedReallySimpleSort(int a[], int n, int m){
         a[i] = index;
         going--;
     }
+    // time complexity = o(n + n) = o(n)
+    // space comlexity = o(m)
 }
+
 void printArray(int arr[], int n){
     for(int i = 0; i < n; i++) cout<<arr[i]<<endl;
 }

@@ -84,7 +84,7 @@ void GeneralizedReallySimpleSort(int a[], int n, int m){
     int index = 0;
     int going = equal[0];
     for(int i = 0; i < n; i++){
-        if(going == 0) going = equal[++index];
+        while(going == 0) going = equal[++index];
         a[i] = index;
         going--;
     }

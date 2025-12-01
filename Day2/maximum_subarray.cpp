@@ -98,6 +98,23 @@ void find_maximum_subarray_bruteFore(int arr[], int n, int ans[]){
     }
 }
 
+int maxInt(int a, int b){
+    return (a > b) ? a : b;
+}
+
+int find_maximum_subarray_using_kadane_algo(int arr[], int n){
+    // This algorithm is kind of iterative DP.
+    int res = arr[0];
+    int maxEnding = arr[0];
+    for(int i = 1; i < n; i++){
+        maxEnding = maxInt(arr[i], maxEnding + arr[i]);
+        res = maxInt(res, maxEnding);
+    }
+    return res;
+    // time complexity = o(n)
+    // space complexity = o(1)
+}
+
 int main(){
     ios::sync_with_stdio(NULL);
     cin.tie(0);
@@ -112,5 +129,6 @@ int main(){
     cout<<"Maximum subarray using Recursion is :\nlow = "<<ans[0]<<"\nhigh = "<<ans[1]<<"\nsum = "<<ans[2]<<endl;
     find_maximum_subarray_bruteFore(arr, n, ans);
     cout<<"Maximum Subarray using Brute Force is :\nlow = "<<ans[0]<<"\nhigh = "<<ans[1]<<"\nsum = "<<ans[2]<<endl;
+    cout<<"Maximum Subarray sum using Kadane's Algorithm is "<<find_maximum_subarray_using_kadane_algo(arr, n)<<endl;
     return 0;
 }

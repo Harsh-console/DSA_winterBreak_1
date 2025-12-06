@@ -1,0 +1,1155 @@
+PowerShell 7.5.4
+PS C:\Users\USER> git --version
+git version 2.52.0.windows.1
+PS C:\Users\USER> cd D:/nvim_files
+PS D:\nvim_files> mkdir git_learning
+
+    Directory: D:\nvim_files
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:09 PM                git_learning
+
+PS D:\nvim_files> cd git_learning
+PS D:\nvim_files\git_learning> mkdir git_one
+
+    Directory: D:\nvim_files\git_learning
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:10 PM                git_one
+
+PS D:\nvim_files\git_learning> cd git_one
+PS D:\nvim_files\git_learning\git_one> ni one.cpp
+
+    Directory: D:\nvim_files\git_learning\git_one
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/5/2025 12:12 PM              0 one.cpp
+
+PS D:\nvim_files\git_learning\git_one> rm one.cpp
+PS D:\nvim_files\git_learning\git_one> ls
+PS D:\nvim_files\git_learning\git_one> nvim one.cpp
+PS D:\nvim_files\git_learning\git_one> l
+l: The term 'l' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS D:\nvim_files\git_learning\git_one> ls
+
+    Directory: D:\nvim_files\git_learning\git_one
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/5/2025 12:13 PM            136 one.cpp
+
+PS D:\nvim_files\git_learning\git_one> nvim two.cpp
+PS D:\nvim_files\git_learning\git_one> mkdir myFolder
+
+    Directory: D:\nvim_files\git_learning\git_one
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:16 PM                myFolder
+
+PS D:\nvim_files\git_learning\git_one> cd myFodler
+Set-Location: Cannot find path 'D:\nvim_files\git_learning\git_one\myFodler' because it does not exist.
+PS D:\nvim_files\git_learning\git_one> cd myFolder
+PS D:\nvim_files\git_learning\git_one\myFolder> nvim three.cpp
+PS D:\nvim_files\git_learning\git_one\myFolder> cd ..
+PS D:\nvim_files\git_learning\git_one> git init
+Initialized empty Git repository in D:/nvim_files/git_learning/git_one/.git/
+PS D:\nvim_files\git_learning\git_one> ls
+
+    Directory: D:\nvim_files\git_learning\git_one
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:22 PM                myFolder
+-a---           12/5/2025 12:13 PM            136 one.cpp
+-a---           12/5/2025 12:16 PM            399 two.cpp
+
+PS D:\nvim_files\git_learning\git_one> ls -la
+Get-ChildItem: A parameter cannot be found that matches parameter name 'la'.
+PS D:\nvim_files\git_learning\git_one> ls -Force
+
+    Directory: D:\nvim_files\git_learning\git_one
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h-           12/5/2025 12:23 PM                .git
+d----           12/5/2025 12:22 PM                myFolder
+-a---           12/5/2025 12:13 PM            136 one.cpp
+-a---           12/5/2025 12:16 PM            399 two.cpp
+
+PS D:\nvim_files\git_learning\git_one> cd ..
+PS D:\nvim_files\git_learning> git clone https://github.com/Harsh-console/test_repo.git
+Cloning into 'test_repo'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), done.
+PS D:\nvim_files\git_learning> ls
+
+    Directory: D:\nvim_files\git_learning
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:23 PM                git_one
+d----           12/5/2025 12:33 PM                test_repo
+
+PS D:\nvim_files\git_learning> cd test_repo
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:33 PM            115 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> cd ..
+PS D:\nvim_files\git_learning> cd git_one
+PS D:\nvim_files\git_learning\git_one> ls
+
+    Directory: D:\nvim_files\git_learning\git_one
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:22 PM                myFolder
+-a---           12/5/2025 12:13 PM            136 one.cpp
+-a---           12/5/2025 12:16 PM            399 two.cpp
+
+PS D:\nvim_files\git_learning\git_one> nvim one.cpp
+PS D:\nvim_files\git_learning\git_one> cd ..
+PS D:\nvim_files\git_learning> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS D:\nvim_files\git_learning> cd git_one
+PS D:\nvim_files\git_learning\git_one> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myFolder/
+        one.cpp
+        two.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\nvim_files\git_learning\git_one> cd ..
+PS D:\nvim_files\git_learning> tree
+Folder PATH listing for volume New Volume
+Volume serial number is 6865-551D
+D:.
+├───git_one
+│   └───myFolder
+└───test_repo
+PS D:\nvim_files\git_learning> tree /F D:\nvim_files\git_learning\git_one
+Folder PATH listing for volume New Volume
+Volume serial number is 6865-551D
+D:\NVIM_FILES\GIT_LEARNING\GIT_ONE
+│   one.cpp
+│   two.cpp
+│
+└───myFolder
+        three.cpp
+
+PS D:\nvim_files\git_learning> cd test_repo
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:33 PM            115 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> cd ..
+PS D:\nvim_files\git_learning> cd test_repo
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test_github.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> mkdir myFolder
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:47 PM                myFolder
+
+PS D:\nvim_files\git_learning\test_repo> cd myFolder
+PS D:\nvim_files\git_learning\test_repo\myFolder> nvim test_git_local.cpp
+PS D:\nvim_files\git_learning\test_repo\myFolder> cd ..
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test_github.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myFolder/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   myFolder/test_git_local.cpp
+        modified:   test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git reset
+Unstaged changes after reset:
+M       test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> git statsu
+git: 'statsu' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test_github.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myFolder/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   myFolder/test_git_local.cpp
+        modified:   test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git reset
+Unstaged changes after reset:
+M       test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> git add --all
+PS D:\nvim_files\git_learning\test_repo> nvim new_test_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git add --all
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   myFolder/test_git_local.cpp
+        new file:   new_test_file.cpp
+        modified:   test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git reset
+Unstaged changes after reset:
+M       test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> git add test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test_github.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myFolder/
+        new_test_file.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git add myFolder/new_test_file.cpp
+fatal: pathspec 'myFolder/new_test_file.cpp' did not match any files
+PS D:\nvim_files\git_learning\test_repo> git add myFolder/test_git_local.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   myFolder/test_git_local.cpp
+        modified:   test_github.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_test_file.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git add new_test_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   myFolder/test_git_local.cpp
+        new file:   new_test_file.cpp
+        modified:   test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git add ..cpp
+fatal: pathspec '..cpp' did not match any files
+PS D:\nvim_files\git_learning\test_repo> git add .cpp
+fatal: pathspec '.cpp' did not match any files
+PS D:\nvim_files\git_learning\test_repo> git add *.cpp
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[main 2c12768] Update
+ 3 files changed, 13 insertions(+)
+ create mode 100644 myFolder/test_git_local.cpp
+ create mode 100644 new_test_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git config --global user.name
+Harsh Singh
+PS D:\nvim_files\git_learning\test_repo> git config --global user.email
+harsh.console004@gmail.com
+PS D:\nvim_files\git_learning\test_repo> git reset HEAD~
+Unstaged changes after reset:
+M       test_github.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test_github.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        myFolder/
+        new_test_file.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[main abe42ba] Update
+ 3 files changed, 13 insertions(+)
+ create mode 100644 myFolder/test_git_local.cpp
+ create mode 100644 new_test_file.cpp
+PS D:\nvim_files\git_learning\test_repo> #comment
+PS D:\nvim_files\git_learning\test_repo> #git rm filename.cpp -> simultaneously delete and stage the deleted file
+PS D:\nvim_files\git_learning\test_repo> git reset --hard
+HEAD is now at abe42ba Update
+PS D:\nvim_files\git_learning\test_repo> git log
+commit abe42ba65c94bf07e8e63967c7daf5c6d4370bb3 (HEAD -> main)
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 13:12:02 2025 +0530
+
+    Update
+
+commit d76c87134734f91428ed4414950f969ec65bd0d2 (origin/main, origin/HEAD)
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 12:32:30 2025 +0530
+
+    Add test_github.cpp with a simple output
+
+commit 2edbb4b6ca84f205d550efc38ede40f7fe8bafd6
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 12:29:10 2025 +0530
+
+    Initial commit
+PS D:\nvim_files\git_learning\test_repo> git branch
+* main
+PS D:\nvim_files\git_learning\test_repo> git branch development
+PS D:\nvim_files\git_learning\test_repo> git branch
+  development
+* main
+PS D:\nvim_files\git_learning\test_repo> git checkout development
+Switched to branch 'development'
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch development
+nothing to commit, working tree clean
+PS D:\nvim_files\git_learning\test_repo> nvim new_dev_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   restore    Restore working tree files
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   diff       Show changes between commits, commit and working tree, etc
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   backfill   Download missing objects in a partial clone
+   branch     List, create, or delete branches
+   commit     Record changes to the repository
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   reset      Reset current HEAD to the specified state
+   switch     Switch branches
+   tag        Create, list, delete or verify tags
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch development
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_dev_branch_file.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[development c10cf4d] Update
+ 1 file changed, 6 insertions(+)
+ create mode 100644 new_dev_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git checkout development
+Switched to branch 'development'
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:25 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim new main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:28 PM            118 new
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim new
+PS D:\nvim_files\git_learning\test_repo> Rename-Item "new" "new_main_branch_file.cpp"
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_main_branch_file.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[main b4ecc5f] Update
+ 1 file changed, 6 insertions(+)
+ create mode 100644 new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\nvim_files\git_learning\test_repo> git checkout development
+Switched to branch 'development'
+PS D:\nvim_files\git_learning\test_repo> git merge main -n "Merging development branch into main branch"
+merge: Merging development branch into main branch - not something we can merge
+PS D:\nvim_files\git_learning\test_repo> git merge main -m "Merging development branch into main branch"
+Merge made by the 'ort' strategy.
+ new_main_branch_file.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:29 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:33 PM            118 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:33 PM            118 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> # holy , merge actually put content of main into development branch, so earlier comment was wrong
+PS D:\nvim_files\git_learning\test_repo> git merge development -m"Merging on Main with development"
+Updating b4ecc5f..28a75aa
+Fast-forward (no commit created; -m option ignored)
+ new_dev_branch_file.cpp | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 new_dev_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:36 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:33 PM            118 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git branch staging
+PS D:\nvim_files\git_learning\test_repo> git checkout staging
+Switched to branch 'staging'
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:36 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:33 PM            118 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> nvim new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch staging
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   new_main_branch_file.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[staging d8e467e] Update
+ 1 file changed, 1 insertion(+)
+PS D:\nvim_files\git_learning\test_repo> git checkout development
+Switched to branch 'development'
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:36 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:39 PM            118 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch development
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   new_main_branch_file.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[development 6255c7f] Update
+ 1 file changed, 1 insertion(+)
+PS D:\nvim_files\git_learning\test_repo> git merge staging -m"Trying to merge staging into devlopment branch which will cause merge conflict due to new_main_branch_file.cpp being editted differently in both branched"
+Auto-merging new_main_branch_file.cpp
+CONFLICT (content): Merge conflict in new_main_branch_file.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Git Merge Conflit Solved!"
+[development 8d73f74] Git Merge Conflit Solved!
+PS D:\nvim_files\git_learning\test_repo> git checkout staging
+Switched to branch 'staging'
+PS D:\nvim_files\git_learning\test_repo> nvim new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git merge development -m"Merge Devlopment branch into staging branch"
+Updating d8e467e..8d73f74
+Fast-forward (no commit created; -m option ignored)
+ new_main_branch_file.cpp | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  1:36 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:46 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> nvim new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch staging
+nothing to commit, working tree clean
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+PS D:\nvim_files\git_learning\test_repo> nvim new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git merge staging
+Updating 28a75aa..8d73f74
+Fast-forward
+ new_main_branch_file.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+PS D:\nvim_files\git_learning\test_repo> nvim new_main_branch_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git log --oneline
+8d73f74 (HEAD -> main, staging, development) Git Merge Conflit Solved!
+6255c7f Update
+d8e467e Update
+28a75aa Merging development branch into main branch
+b4ecc5f Update
+c10cf4d Update
+abe42ba Update
+d76c871 (origin/main, origin/HEAD) Add test_github.cpp with a simple output
+2edbb4b Initial commit
+PS D:\nvim_files\git_learning\test_repo> nvim new_commit_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git add ,
+>> ^C
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[main 31e0c70] Update
+ 1 file changed, 6 insertions(+)
+ create mode 100644 new_commit_file.cpp
+PS D:\nvim_files\git_learning\test_repo> git checkout abe42ba
+Note: switching to 'abe42ba'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at abe42ba Update
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Previous HEAD position was abe42ba Update
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 8 commits.
+  (use "git push" to publish your local commits)
+PS D:\nvim_files\git_learning\test_repo> git log
+commit 31e0c70f9c733a2dc32ba5958c67799a1f9e4e4d (HEAD -> main)
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 13:50:42 2025 +0530
+
+    Update
+
+commit 8d73f7452952b2f7e42a1832aec8334c75714a33 (staging, development)
+Merge: 6255c7f d8e467e
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 13:45:34 2025 +0530
+
+    Git Merge Conflit Solved!
+
+commit 6255c7f71d194e1ed7a1f6f9383da8c7b129c9a4
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 13:40:19 2025 +0530
+
+    Update
+
+commit d8e467e913f1af0eb9df3e75d75c10fc37ced82a
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 13:39:17 2025 +0530
+
+    Update
+
+commit 28a75aa5b9183a9f66e99ff01af5bd9cd1bd6e43
+Merge: c10cf4d b4ecc5f
+Author: Harsh Singh <harsh.console004@gmail.com>
+Date:   Fri Dec 5 13:33:26 2025 +0530
+
+    Merging development branch into main branch
+
+PS D:\nvim_files\git_learning\test_repo> :
+:: The term ':' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS D:\nvim_files\git_learning\test_repo> git log --oneline
+31e0c70 (HEAD -> main) Update
+8d73f74 (staging, development) Git Merge Conflit Solved!
+6255c7f Update
+d8e467e Update
+28a75aa Merging development branch into main branch
+b4ecc5f Update
+c10cf4d Update
+abe42ba Update
+d76c871 (origin/main, origin/HEAD) Add test_github.cpp with a simple output
+2edbb4b Initial commit
+PS D:\nvim_files\git_learning\test_repo> git diff 31e0c70 2edbb4b
+diff --git a/myFolder/test_git_local.cpp b/myFolder/test_git_local.cpp
+deleted file mode 100644
+index f436456..0000000
+--- a/myFolder/test_git_local.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"Changes Made Locally"<<endl;
+-    return 0;
+-}
+diff --git a/new_commit_file.cpp b/new_commit_file.cpp
+deleted file mode 100644
+index 7a022ed..0000000
+--- a/new_commit_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"I want to go to my previous commit"<<endl;
+-    return 0;
+-}
+diff --git a/new_dev_branch_file.cpp b/new_dev_branch_file.cpp
+deleted file mode 100644
+index 859225f..0000000
+--- a/new_dev_branch_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+PS D:\nvim_files\git_learning\test_repo> git diff 31e0c70 2edbb4b
+diff --git a/myFolder/test_git_local.cpp b/myFolder/test_git_local.cpp
+deleted file mode 100644
+index f436456..0000000
+--- a/myFolder/test_git_local.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"Changes Made Locally"<<endl;
+-    return 0;
+-}
+diff --git a/new_commit_file.cpp b/new_commit_file.cpp
+deleted file mode 100644
+index 7a022ed..0000000
+--- a/new_commit_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"I want to go to my previous commit"<<endl;
+-    return 0;
+-}
+diff --git a/new_dev_branch_file.cpp b/new_dev_branch_file.cpp
+deleted file mode 100644
+index 859225f..0000000
+--- a/new_dev_branch_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+diff --git a/myFolder/test_git_local.cpp b/myFolder/test_git_local.cpp
+deleted file mode 100644
+index f436456..0000000
+--- a/myFolder/test_git_local.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"Changes Made Locally"<<endl;
+-    return 0;
+-}
+diff --git a/new_commit_file.cpp b/new_commit_file.cpp
+deleted file mode 100644
+index 7a022ed..0000000
+--- a/new_commit_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"I want to go to my previous commit"<<endl;
+-    return 0;
+-}
+diff --git a/new_dev_branch_file.cpp b/new_dev_branch_file.cpp
+deleted file mode 100644
+index 859225f..0000000
+--- a/new_dev_branch_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"Dev branch file made locally"<<endl;
+-    return 0;
+-}
+diff --git a/new_main_branch_file.cpp b/new_main_branch_file.cpp
+deleted file mode 100644
+index 8bc63fc..0000000
+--- a/new_main_branch_file.cpp
++++ /dev/null
+@@ -1,11 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"file made in Main Branch"<<endl;
+-//<<<<<<< HEAD
+-    cout<<"Files changed made in Devlopment Branch"<<endl;
+-//=======
+-//    cout<<"File changed from staging branch"<<endl;
+-//>>>>>>> staging
+-    return 0;
+-}
+diff --git a/new_test_file.cpp b/new_test_file.cpp
+deleted file mode 100644
+index 5490465..0000000
+--- a/new_test_file.cpp
++++ /dev/null
+@@ -1,6 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-    cout<<"Local files"<<endl;
+-    return 0;
+-}
+diff --git a/test_github.cpp b/test_github.cpp
+deleted file mode 100644
+index c26b887..0000000
+--- a/test_github.cpp
++++ /dev/null
+@@ -1,7 +0,0 @@
+-#include<iostream>
+-using namespace std;
+-int main(){
+-  cout<<"File from Cloud in github"<<endl;
+-  cout<<"Change from Local 1"<<endl;
+-  return 0;
+-}
+PS D:\nvim_files\git_learning\test_repo> git push origin main
+Enumerating objects: 28, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (26/26), 2.51 KiB | 429.00 KiB/s, done.
+Total 26 (delta 12), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (12/12), done.
+To https://github.com/Harsh-console/test_repo.git
+   d76c871..31e0c70  main -> main
+PS D:\nvim_files\git_learning\test_repo> git checkout staging
+Switched to branch 'staging'
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch staging
+nothing to commit, working tree clean
+PS D:\nvim_files\git_learning\test_repo> git push origin staging
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'staging' on GitHub by visiting:
+remote:      https://github.com/Harsh-console/test_repo/pull/new/staging
+remote:
+To https://github.com/Harsh-console/test_repo.git
+ * [new branch]      staging -> staging
+PS D:\nvim_files\git_learning\test_repo> git checkout development
+Switched to branch 'development'
+PS D:\nvim_files\git_learning\test_repo> git push origin development
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'development' on GitHub by visiting:
+remote:      https://github.com/Harsh-console/test_repo/pull/new/development
+remote:
+To https://github.com/Harsh-console/test_repo.git
+ * [new branch]      development -> development
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  2:09 PM            128 new_commit_file.cpp
+-a---           12/5/2025  1:52 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:52 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1023 bytes | 204.00 KiB/s, done.
+From https://github.com/Harsh-console/test_repo
+   31e0c70..39d30b0  main       -> origin/main
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  2:09 PM            128 new_commit_file.cpp
+-a---           12/5/2025  1:52 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  1:52 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git merge
+Updating 31e0c70..39d30b0
+Fast-forward
+ new_github_cloud_file_2.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 new_github_cloud_file_2.cpp
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  2:09 PM            128 new_commit_file.cpp
+-a---           12/5/2025  1:52 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  2:09 PM             96 new_github_cloud_file_2.cpp
+-a---           12/5/2025  1:52 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 989 bytes | 141.00 KiB/s, done.
+From https://github.com/Harsh-console/test_repo
+   39d30b0..c860a16  main       -> origin/main
+Updating 39d30b0..c860a16
+Fast-forward
+ new_github_cloud_file.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 new_github_cloud_file.c
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  2:09 PM            128 new_commit_file.cpp
+-a---           12/5/2025  1:52 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  2:09 PM             96 new_github_cloud_file_2.cpp
+-a---           12/5/2025  2:11 PM             79 new_github_cloud_file.c
+-a---           12/5/2025  1:52 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> Rename-Item "new_github_could_file.c" "new_github_cloud_file_3.c"
+Rename-Item: Cannot find path 'D:\nvim_files\git_learning\test_repo\new_github_could_file.c' because it does not exist.
+PS D:\nvim_files\git_learning\test_repo> Rename-Item "new_github_cloud_file.c" "new_github_cloud_file_3.c"
+PS D:\nvim_files\git_learning\test_repo> git push
+Everything up-to-date
+PS D:\nvim_files\git_learning\test_repo> git push origin main
+Everything up-to-date
+PS D:\nvim_files\git_learning\test_repo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    new_github_cloud_file.c
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_github_cloud_file_3.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git commit -m"Update"
+[main 17d6484] Update
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename new_github_cloud_file.c => new_github_cloud_file_3.c (100%)
+PS D:\nvim_files\git_learning\test_repo> git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 240 bytes | 240.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Harsh-console/test_repo.git
+   c860a16..17d6484  main -> main
+PS D:\nvim_files\git_learning\test_repo> #git restore filename.cpp or .(for whole repo) or folder name
+PS D:\nvim_files\git_learning\test_repo> #git restore filename.cpp --staged if you already staged the wrong version of file
+PS D:\nvim_files\git_learning\test_repo> #last one syntax is wrong
+PS D:\nvim_files\git_learning\test_repo> #correct syntax  : git restore --staged filename.cpp
+PS D:\nvim_files\git_learning\test_repo> git stash
+No local changes to save
+PS D:\nvim_files\git_learning\test_repo> nvim new_local_file_unfinshed.cpp
+PS D:\nvim_files\git_learning\test_repo> git stash
+No local changes to save
+PS D:\nvim_files\git_learning\test_repo> git add .
+PS D:\nvim_files\git_learning\test_repo> git stash
+Saved working directory and index state WIP on main: 17d6484 Update
+PS D:\nvim_files\git_learning\test_repo> git checkout development
+Switched to branch 'development'
+PS D:\nvim_files\git_learning\test_repo> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  2:22 PM            128 new_commit_file.cpp
+-a---           12/5/2025  1:52 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  2:22 PM             96 new_github_cloud_file_2.cpp
+-a---           12/5/2025  2:22 PM             79 new_github_cloud_file_3.c
+-a---           12/5/2025  1:52 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git stash pop
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   new_local_file_unfinshed.cpp
+
+Dropped refs/stash@{0} (58435ce7a766f3966b4669a05df653d5a118ca6b)
+PS D:\nvim_files\git_learning\test_repo> ls
+
+    Directory: D:\nvim_files\git_learning\test_repo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           12/5/2025 12:48 PM                myFolder
+-a---           12/5/2025  2:22 PM            128 new_commit_file.cpp
+-a---           12/5/2025  1:52 PM            122 new_dev_branch_file.cpp
+-a---           12/5/2025  2:22 PM             96 new_github_cloud_file_2.cpp
+-a---           12/5/2025  2:22 PM             79 new_github_cloud_file_3.c
+-a---           12/5/2025  2:23 PM            147 new_local_file_unfinshed.cpp
+-a---           12/5/2025  1:52 PM            279 new_main_branch_file.cpp
+-a---           12/5/2025 12:58 PM            105 new_test_file.cpp
+-a---           12/5/2025 12:33 PM             22 README.md
+-a---           12/5/2025 12:43 PM            153 test_github.cpp
+
+PS D:\nvim_files\git_learning\test_repo> git stash apply
+No stash entries found.
+PS D:\nvim_files\git_learning\test_repo> #git stash apply store the saved file of previous git stash
+PS D:\nvim_files\git_learning\test_repo> #use git stash apply instead of git pop
+PS D:\nvim_files\git_learning\test_repo> # git can store multiple stash files
+PS D:\nvim_files\git_learning\test_repo> git stash list
+PS D:\nvim_files\git_learning\test_repo> # to get any particular stash use following command:
+PS D:\nvim_files\git_learning\test_repo> #git stash apply stash@{0}
+PS D:\nvim_files\git_learning\test_repo> # git stash drop - removes a stash
+PS D:\nvim_files\git_learning\test_repo> # git revert <commit_id>
+PS D:\nvim_files\git_learning\test_repo> #:wq
+PS D:\nvim_files\git_learning\test_repo> # to perform a git rebase you need to be a the branch where you want to perform rebase
+PS D:\nvim_files\git_learning\test_repo> #git rebase main
+PS D:\nvim_files\git_learning\test_repo> # it doesn't commit changes, so git log isn't cluttered
+PS D:\nvim_files\git_learning\test_repo> #else it is same as git merge
+PS D:\nvim_files\git_learning\test_repo>

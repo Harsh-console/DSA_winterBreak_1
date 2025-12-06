@@ -1,1 +1,22 @@
-/ipynb_checkpoints
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore large datasets
+data/
+*.csv
+
+# Ignore OS junk
+.DS_Store
+Thumbs.db
+

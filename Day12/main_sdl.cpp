@@ -10,7 +10,7 @@ vector<T> make_vector(Args&&... args){
 
 int main(int argc, char* argv[]) {
     int WIDTH = 1200, HEIGHT = 600;
-    int TILE = 10;
+    int TILE = 20;
     int x_vel = 150;
     int y_vel = 150;
     int score = 0;
@@ -71,11 +71,27 @@ int main(int argc, char* argv[]) {
     snake.push_back(make_vector<float>(dist_x(gen), dist_y(gen)));
     float food[2];
     int head_dir = 0; // 0 = stop, 1 = up, 2 = right, 3 = down, 4 = left
+    vector<int> dir;
+    dir.push_back(head_dir);
 
     // Main Loop
     while (running) {
         float prev_x = snake[0][0];
         float prev_y = snake[0][1];
+        switch(head_dir){
+            case 1:
+                prev_y += TILE;
+                break;
+            case 2:
+                pre_x -= TILE;
+                break;
+            case 3:
+                prev_y -= TILE;
+                break;
+            case 4:
+                prev_x += TILE;
+                break;
+        }
         // find delta_time
         Uint32 current_deltaTime = SDL_GetTicks();
         float delta_time = (current_deltaTime - last_deltaTime) / 1000.0f;
@@ -118,7 +134,7 @@ int main(int argc, char* argv[]) {
                 if(event.key.keysym.sym == SDLK_SPACE) head_dir = 0;
             }
         }
-
+        dir[0] = head_dir;
         // check collision with boundary
         if(snake[0][0] == 0 && head_dir == 4) collision = true;
         if(snake[0][0] == WIDTH - TILE && head_dir == 2) collision = true;
@@ -156,6 +172,21 @@ int main(int argc, char* argv[]) {
             snake[i][1] = prev_y;
             prev_x = temp_x;
             prev_y = temp_y;
+            dir[i] = dir[i - 1];
+            switch(dir[i]){
+                case 1: 
+                    prev_y += TILE;
+                    break;
+                case 2:
+                    prev_x -= TILE;
+                    break;
+                case 3:
+                    prev_y -= TILE;
+                    break;
+                case 4:
+                    prev_x += TILE;
+                    break;
+            }
         }
 
         // Draw Food
@@ -174,6 +205,21 @@ int main(int argc, char* argv[]) {
         if(abs(snake[0][0] - food[0]) + abs(snake[0][1] - food[1]) <= min_dist){
             is_food = false;
             vector<float> new_block = snake.back();
+            dir.push_back(dir.back());
+            switch(dir.back()){
+                case 1:
+                    new_block[1] += TILE;
+                    break;
+                case 2:
+                    new_block[0] -= TILE;
+                    break;
+                case 3:
+                    new_block[1] -= TILE;
+                    break;
+                case 4:
+                    new_block[0] += TILE;
+                    break;
+            }
             snake.push_back(new_block);
             prev_x = new_block[0];
             prev_y = new_block[1];

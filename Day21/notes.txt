@@ -1,0 +1,4 @@
+associative memory -> auto complete ->ability to return to previous state
+computer memory -> bits , bytes
+computer retreive -> by address
+

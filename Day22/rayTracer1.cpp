@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char* argv[]){
     //window setup
     const int WIDTH = 1200, HEIGHT = 600, GRID_SIZE = 5;
-    SDL_Window* window = SDL_CreateWindow("ray tracer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SDL_WINDOWSHOWN);
+    SDL_Window* window = SDL_CreateWindow("ray tracer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SDL_WINDOW_SHOWN);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED);
     int running = 1;
     SDL_Event event;
